@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON Questions papper</title>
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style>
+			.container{
+				width: 500px;
+				margin-top: 100px;
+				font-family: 'Times New Roman', Times, serif;
+				font-size: 18px;
+			}
+			.para{
+				text-align: center;
+				text-decoration: blue;
+				text-decoration-style: double;
+				text-decoration-color: darkcyan;
+				font-kerning: inherit;
+				font-size: 22px;
+				font-family: 'Times New Roman', Times, serif;
+			}
+			.container-fluid{
+				float: right;
+			}
+			.container-fluid p{
+				text-align: center;
+				text-decoration-color: chartreuse;
+			}
+			</style>
+</head>
+<body>
+<script>
+	$(document).ready(function(){
+		
+		$("#btn").click(function(){
+			$.getJSON('data.json',function(rd){
+				var q1 = $("#one").val();
+				var q2 = $("#two").val();
+				var q3 = $("#three").val();
+			
+				if(q1==rd.Nepal){
+					$("#result").html("Correct");
+					total=total+1;
+				}else
+				{
+					$("#result").html("Wrong");
+				}
+				if(q2==rd.India){
+					$("#result1").html("Correct");
+					total=total+1;
+				}else
+				{
+					$("#result1").html("Wrong");
+				}
+				if(q3==rd.Japan){
+					$("#result2").html("Correct");
+
+					total=total+1;
+				}else
+				{
+					$("#result2").html("Wrong");
+
+				}
+
+					$("#res").html(res);
+			})
+		})
+
+			
+	})	
+
+
+</script>
+<div class="container">
+	<div class="form-group">
+<p>Capital city of Nepal is: </p>
+<input type="text" name="questin1" id="one" class="form-control">
+<div id="result"></div>
+</div>
+
+<div class="form-group">
+<p>Capital city of India is: </p>
+<input type="text" name="questin1" id="two" class="form-control">
+<div id="result1"></div>
+</div>
+
+<div class="form-group">
+<p>Capital city of Japan is: </p>
+<input type="text" name="questin1" id="three" class="form-control">
+<div id="result2"></div>
+</div>
+
+<p><input type="button" name="btn_submit" value="Submit" id="btn">
+<p>Your Score:  </p>
+	<div id="res"></div>
+
+</div>
+
+</body>
+</html>

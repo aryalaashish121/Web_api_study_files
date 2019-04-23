@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>This is ajax</title>
+        <script src="jquery.js"></script>
+
+    </head>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $.ajax({
+                    url: "demo.txt",
+                    dataType: 'txt',
+                    success:function(result1){
+                        $("#div1").html(result1);
+                    }
+                })
+            })
+        })
+    </script>
+
+    <body>
+
+        <div id="div1">Output here</div>
+        <button>click</button>
+    </body>
+
+    </html>

@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>This is Json</title>
+        <script src="jquery.js"></script>
+        <meta charset="utf-8"/>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                $.getJSON('data.json', function(rd){
+                    $('#mydiv').html("<table border='1'><tr><td>Name</td> <td>"+rd.name+"</td></tr><tr><td>Age</td><td>"+rd.age+"</td></tr></table>")
+//var one = $("#txt").val();
+                 })
+            })
+        })
+    //make question papper checking different 4 question using json file.
+    </script>
+    
+
+    </head>
+    <body>
+        <div id="mydiv">
+            Stage
+        </div>
+        <input type="button" id="btn" value="Load Data"/>
+
+
+    </body>
